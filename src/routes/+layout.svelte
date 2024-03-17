@@ -11,7 +11,7 @@
 			document.documentElement.dataset.theme == currentTheme;
 			setTheme(currentTheme, false);
 		} else {
-			setTheme(currentTheme);
+			setTheme(currentTheme, true);
 		}
 	});
 </script>
