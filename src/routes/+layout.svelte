@@ -10,6 +10,8 @@
 			currentTheme = getCookie('theme');
 			document.documentElement.dataset.theme == currentTheme;
 			setTheme(currentTheme, false);
+		} else {
+			setTheme(currentTheme);
 		}
 	});
 </script>
