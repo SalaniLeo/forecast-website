@@ -2,7 +2,7 @@
 	import '../app.css';
 	import Navbar from '$lib/navbar.svelte';
 	import { onMount } from 'svelte';
-	import { getCookie, setCookie, setTheme } from '$lib';
+	import { getCookie, setTheme } from '$lib';
 	let currentTheme = 'light';
 
 	onMount(() => {

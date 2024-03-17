@@ -1,6 +1,5 @@
 <script>
 	// @ts-nocheck
-
 	import { fade } from 'svelte/transition';
 	import { currentTheme } from '$lib';
 
@@ -21,7 +20,8 @@
 	let index = 0;
 
 	const next = () => {
-		index = (index + 1) % lightCarouselPhotos.length;
+		if ($currentTheme == 'light') index = (index + 1) % lightCarouselPhotos.length;
+		if ($currentTheme == 'dark') index = (index + 1) % darkCarouselPhotos.length;
 	};
 </script>
 

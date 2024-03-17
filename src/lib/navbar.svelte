@@ -1,6 +1,6 @@
 <script>
 	// @ts-nocheck
-	import { getTheme, setTheme, currentTheme } from '$lib';
+	import { setTheme, currentTheme } from '$lib';
 </script>
 
 <nav>
@@ -69,6 +69,7 @@
 		display: flex;
 		align-items: center;
 		width: 20px;
+		cursor: pointer;
 	}
 
 	@media screen and (max-width: 1200px) {
