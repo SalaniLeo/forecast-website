@@ -1,28 +1,61 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 @import "@fortawesome/fontawesome-free/css/all.min.css";
 
-:root {
+:root{
+    /* Used for ui elements background. Use appropriate proportions for each one */
     --primary-color: #191919;
-    --secondary-color: #303030;
-    --tertiary-color: #2c2c2c;
-    --shadow-color: #0a0a0a;
-    --text-color: #e5e2df;
-    --link-color: #d9e5e4;
-}
-
-[data-theme="light"] {
+    --secondary-color: #242424;
+    --tertiary-color: #4f4f4f;
+  
+    /* Used for shadows, under ui elements */
+     --shadow-color-heavy: #0a0a0aad;
+     --shadow-color-medium: #00000080;
+     --shadow-color-light: #00000042;
+  
+    /* Used to refine a page colors, to give a personal touch */
+    --accent-color-primary: #494949;
+    --accent-color-secondary: #3b3b3b;
+  
+      /* Used to refine a page colors, to give a personal touch */
+    --font-primary-color: #e5e2df;
+    --font-secondary-color: #9d9d9d;
+    --font-link-color: #d9e5e4;
+  
+    /* Different elements may need a border, use with caution, might not look good everywhere */
+    --border-width-primary: 6px;
+    --border-width-secondary: 2px;
+  }
+  
+  [data-theme="light"] {
+  
+    /* Used for ui elements background. Use appropriate proportions for each one */
     --primary-color: #e5e2df;
-    --secondary-color: #d9e5e4;
-    --tertiary-color: #c5e9e6;
-    --shadow-color: #454545;
-    --text-color: #191919;
-    --link-color: #343434;
-}
+    --secondary-color: #fefefe;
+    --tertiary-color: #565656;
+  
+    /* Used for shadows, under ui elements */
+    --shadow-color-heavy: #0a0a0ace;
+    --shadow-color-medium: #00000080;
+    --shadow-color-light: #00000042;
+  
+    /* Used to refine a page colors, to give a personal touch */
+    --accent-color-primary: #d9e5e4;
+    --accent-color-secondary: #c5e9e6;
+  
+    /* Font colors, different types of text need different colors */
+    --font-primary-color: #111111;
+    --font-secondary-color: #636363;
+    --font-link-color: #3d3d3d;
+  
+    /* Different elements may need a border, use with caution, might not look good everywhere */
+    --border-width-primary: 6px;
+    --border-width-secondary: 2px;
+  }
 
 *{
     transition-duration: 0.25s;
     font-family: "Josefin Sans", sans-serif;
-    color: var(--text-color);
+    color: var(--font-primary-color);
   }
 
 body {
@@ -40,7 +73,7 @@ a {
 }
 
 .link, a, i {
-    color: var(--link-color);
+    color: var(--font-link-color);
 }
 
 @media screen and (max-width: 720px) {

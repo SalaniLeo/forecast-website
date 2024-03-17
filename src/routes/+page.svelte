@@ -109,7 +109,7 @@
 		justify-content: center;
 	}
 	button {
-		background-color: var(--secondary-color);
+		background-color: var(--accent-color-primary);
 		position: relative;
 		top: 700px;
 		border: none;
@@ -117,14 +117,14 @@
 		border-radius: 20px;
 		width: 100px;
 		cursor: pointer;
-		box-shadow: var(--shadow-color) 0px 0px 10px;
+		box-shadow: var(--shadow-color-light) 0px 0px 10px;
 		transition-duration: 0.1s;
 	}
 	button:hover {
-		background-color: var(--tertiary-color);
+		background-color: var(--accent-color-secondary);
 	}
 	button:active {
-		background-color: var(--secondary-color);
+		background-color: var(--accent-color-primary);
 	}
 	#warning {
 		text-align: center;

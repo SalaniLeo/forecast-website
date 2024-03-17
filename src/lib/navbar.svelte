@@ -32,12 +32,12 @@
 		color: var(--text-color);
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
-		background-color: var(--secondary-color);
+		background-color: var(--accent-color-primary);
 		margin-left: 12rem;
 		margin-right: 12rem;
 		padding: 1rem;
 		border-radius: 10px;
-		box-shadow: var(--shadow-color) 0px 0px 10px;
+		box-shadow: var(--shadow-color-heavy) 0px 0px 10px;
 		text-align: center;
 		align-items: center;
 	}
