@@ -10,7 +10,7 @@
 		<a href="https://salanileo.dev">Made by SalaniLeo</a>
 	</div>
 	<div class="right">
-		<a href="https://github.com/SalaniLeo/Forecast/releases">Donate</a>
+		<a href="https://www.buymeacoffee.com/salanileo">Donate</a>
 	</div>
 </nav>
 
