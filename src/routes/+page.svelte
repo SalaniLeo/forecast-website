@@ -99,6 +99,7 @@
 	img {
 		max-width: 90vw;
 		position: absolute;
+		transition-duration: 0s;
 	}
 	.carousel {
 		position: relative;
@@ -134,7 +135,7 @@
 			top: 25vw;
 		}
 		button {
-			top: 50vw;
+			top: 55vw;
 		}
 		#top {
 			height: 80vw;
@@ -150,10 +151,12 @@
 			top: 60vw;
 		}
 		img {
-			max-height: 30vh;
+			min-height: 300px;
+			min-width: 450px;
 		}
 		#top {
 			height: 110vw;
+			max-height: 600px;
 		}
 	}
 </style>

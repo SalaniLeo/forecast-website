@@ -16,6 +16,7 @@
 	</div>
 	<div class="right">
 		<a href="https://www.buymeacoffee.com/salanileo">Donate</a>
+		<div class="spacer">|</div>
 		<div id="theme-select">
 			{#if $currentTheme == 'dark'}
 				<i class="fa-regular fa-sun themer" on:click={() => setTheme('light', true)}></i>
@@ -56,7 +57,7 @@
 	nav > .right {
 		display: flex;
 		justify-content: flex-end;
-		gap: 15px;
+		gap: 10px;
 	}
 
 	#theme-select {
