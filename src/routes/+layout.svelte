@@ -1,4 +1,5 @@
 <script>
+	import '../app.css';
 	import { onMount } from 'svelte';
 	import { getCookie, setCookie, setTheme } from '$lib';
 	import Navbar from '$lib/navbar.svelte';
