@@ -1,29 +1,27 @@
 <script>
-	import { fade } from 'svelte/transition';
-	let currentTheme = getCookie('theme');
-	import { onMount } from 'svelte';
-	import { getCookie, setCookie, setTheme } from '$lib';
+	// @ts-nocheck
 
-	console.log(currentTheme);
-	const carouselPhotos = [
-		'https://raw.githubusercontent.com/SalaniLeo/Forecast/master/data/images/app1-' +
-			currentTheme +
-			'.png?raw=true',
-		'https://raw.githubusercontent.com/SalaniLeo/Forecast/master/data/images/app2-' +
-			currentTheme +
-			'.png?raw=true',
-		'https://raw.githubusercontent.com/SalaniLeo/Forecast/master/data/images/app3-' +
-			currentTheme +
-			'.png?raw=true',
-		'https://raw.githubusercontent.com/SalaniLeo/Forecast/master/data/images/app4-' +
-			currentTheme +
-			'.png?raw=true'
+	import { fade } from 'svelte/transition';
+	import { currentTheme } from '$lib';
+
+	const lightCarouselPhotos = [
+		'https://raw.githubusercontent.com/SalaniLeo/Forecast/master/data/images/app1-light.png?raw=true',
+		'https://raw.githubusercontent.com/SalaniLeo/Forecast/master/data/images/app2-light.png?raw=true',
+		'https://raw.githubusercontent.com/SalaniLeo/Forecast/master/data/images/app3-light.png?raw=true',
+		'https://raw.githubusercontent.com/SalaniLeo/Forecast/master/data/images/app4-light.png?raw=true'
+	];
+
+	const darkCarouselPhotos = [
+		'https://raw.githubusercontent.com/SalaniLeo/Forecast/master/data/images/app1-dark.png?raw=true',
+		'https://raw.githubusercontent.com/SalaniLeo/Forecast/master/data/images/app2-dark.png?raw=true',
+		'https://raw.githubusercontent.com/SalaniLeo/Forecast/master/data/images/app3-dark.png?raw=true',
+		'https://raw.githubusercontent.com/SalaniLeo/Forecast/master/data/images/app4-dark.png?raw=true'
 	];
 
 	let index = 0;
 
 	const next = () => {
-		index = (index + 1) % carouselPhotos.length;
+		index = (index + 1) % lightCarouselPhotos.length;
 	};
 </script>
 
@@ -31,11 +29,21 @@
 	<div id="top">
 		<h1>Forecast</h1>
 		<h1>A <i>beautiful</i> weather app</h1>
-		<div id="carousel">
-			{#each [carouselPhotos[index]] as src (index)}
-				<img transition:fade {src} alt="" />
-			{/each}
-		</div>
+
+		{#if $currentTheme == 'light'}
+			<div class="carousel" transition:fade>
+				{#each [lightCarouselPhotos[index]] as src (index)}
+					<img transition:fade {src} alt="" />
+				{/each}
+			</div>
+		{:else}
+			<div class="carousel" transition:fade>
+				{#each [darkCarouselPhotos[index]] as src (index)}
+					<img transition:fade {src} alt="" />
+				{/each}
+			</div>
+		{/if}
+
 		<button on:click={next}>Next!</button>
 	</div>
 	<div id="secondary">
@@ -92,7 +100,7 @@
 		max-width: 90vw;
 		position: absolute;
 	}
-	#carousel {
+	.carousel {
 		position: relative;
 		top: 350px;
 		display: flex;
@@ -122,7 +130,7 @@
 		width: 60vw;
 	}
 	@media screen and (max-width: 900px) {
-		#carousel {
+		.carousel {
 			top: 25vw;
 		}
 		button {

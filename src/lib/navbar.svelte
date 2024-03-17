@@ -1,7 +1,6 @@
 <script>
-	import MenuItem from '$lib/components/MenuItem.svelte';
-	import Menu from '$lib/components/Menu.svelte';
-	import { getCookie, setCookie, setTheme, getSysTheme } from '$lib';
+	// @ts-nocheck
+	import { getTheme, setTheme, currentTheme } from '$lib';
 </script>
 
 <nav>
@@ -18,18 +17,11 @@
 	<div class="right">
 		<a href="https://www.buymeacoffee.com/salanileo">Donate</a>
 		<div id="theme-select">
-			<Menu>
-				<i slot="toggle" class="fa-solid fa-paint-roller"></i>
-				<MenuItem
-					><button on:click={() => setTheme('light', true)} class="themer">Light</button></MenuItem
-				>
-				<MenuItem
-					><button on:click={() => setTheme('dark', true)} class="themer">Dark</button></MenuItem
-				>
-				<MenuItem
-					><button on:click={() => getSysTheme(true)} class="themer">System</button></MenuItem
-				>
-			</Menu>
+			{#if $currentTheme == 'dark'}
+				<i class="fa-regular fa-sun themer" on:click={() => setTheme('light', true)}></i>
+			{:else}
+				<i class="fa-regular fa-moon themer" on:click={() => setTheme('dark', true)}></i>
+			{/if}
 		</div>
 	</div>
 </nav>
@@ -73,25 +65,10 @@
 	}
 
 	.themer {
-		border: none;
-		padding: 1rem;
-		background-color: var(--primary-color);
-		width: 100%;
-		height: 100%;
-		color: var(--font-link-color);
-		text-decoration: none;
-	}
-
-	.themer:hover {
-		background-color: var(--tertiary-color);
-	}
-	.themer:active {
-		background-color: var(--secondary-color);
-	}
-
-	.fa-paint-roller {
-		scale: 150%;
-		color: var(--link-color);
+		scale: 115%;
+		display: flex;
+		align-items: center;
+		width: 20px;
 	}
 
 	@media screen and (max-width: 1200px) {
