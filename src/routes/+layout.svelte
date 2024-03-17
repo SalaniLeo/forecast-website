@@ -16,5 +16,8 @@
 	});
 </script>
 
+<svelte:head>
+	<title>Forecast</title>
+</svelte:head>
 <Navbar></Navbar>
 <slot />
