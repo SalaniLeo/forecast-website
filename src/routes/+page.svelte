@@ -1,11 +1,23 @@
 <script>
 	import { fade } from 'svelte/transition';
+	let currentTheme = getCookie('theme');
+	import { onMount } from 'svelte';
+	import { getCookie, setCookie, setTheme } from '$lib';
 
+	console.log(currentTheme);
 	const carouselPhotos = [
-		'https://github.com/SalaniLeo/Forecast/blob/26671eda225ade857a26f02ea4bc71cbccec341f/data/images/app1.png?raw=true',
-		'https://github.com/SalaniLeo/Forecast/blob/26671eda225ade857a26f02ea4bc71cbccec341f/data/images/app2.png?raw=true',
-		'https://github.com/SalaniLeo/Forecast/blob/26671eda225ade857a26f02ea4bc71cbccec341f/data/images/app3.png?raw=true',
-		'https://github.com/SalaniLeo/Forecast/blob/26671eda225ade857a26f02ea4bc71cbccec341f/data/images/app4.png?raw=true'
+		'https://raw.githubusercontent.com/SalaniLeo/Forecast/master/data/images/app1-' +
+			currentTheme +
+			'.png?raw=true',
+		'https://raw.githubusercontent.com/SalaniLeo/Forecast/master/data/images/app2-' +
+			currentTheme +
+			'.png?raw=true',
+		'https://raw.githubusercontent.com/SalaniLeo/Forecast/master/data/images/app3-' +
+			currentTheme +
+			'.png?raw=true',
+		'https://raw.githubusercontent.com/SalaniLeo/Forecast/master/data/images/app4-' +
+			currentTheme +
+			'.png?raw=true'
 	];
 
 	let index = 0;
@@ -88,7 +100,7 @@
 		justify-content: center;
 	}
 	button {
-		background-color: rgb(75, 75, 75);
+		background-color: var(--secondary-color);
 		position: relative;
 		top: 700px;
 		border: none;
@@ -96,12 +108,14 @@
 		border-radius: 20px;
 		width: 100px;
 		cursor: pointer;
+		box-shadow: var(--shadow-color) 0px 0px 10px;
+		transition-duration: 0.1s;
 	}
 	button:hover {
-		background-color: rgb(93, 93, 93);
+		background-color: var(--tertiary-color);
 	}
 	button:active {
-		background-color: rgb(42, 42, 42);
+		background-color: var(--secondary-color);
 	}
 	#warning {
 		text-align: center;

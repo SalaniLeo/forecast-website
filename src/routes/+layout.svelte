@@ -1,9 +1,10 @@
 <script>
 	import '../app.css';
+	import Navbar from '$lib/components/navbar.svelte';
 	import { onMount } from 'svelte';
 	import { getCookie, setCookie, setTheme } from '$lib';
-	import Navbar from '$lib/navbar.svelte';
 	let currentTheme = 'light';
+
 	onMount(() => {
 		if (getCookie('theme') != null) {
 			currentTheme = getCookie('theme');

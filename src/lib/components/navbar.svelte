@@ -1,3 +1,9 @@
+<script>
+	import MenuItem from '$lib/components/MenuItem.svelte';
+	import Menu from '$lib/components/Menu.svelte';
+	import { getCookie, setCookie, setTheme, getSysTheme } from '$lib';
+</script>
+
 <nav>
 	<div class="left">
 		<a href="https://github.com/SalaniLeo/Forecast/" id="github">Github</a>
@@ -11,6 +17,20 @@
 	</div>
 	<div class="right">
 		<a href="https://www.buymeacoffee.com/salanileo">Donate</a>
+		<div id="theme-select">
+			<Menu>
+				<i slot="toggle" class="fa-solid fa-paint-roller"></i>
+				<MenuItem
+					><button on:click={() => setTheme('light', true)} class="themer">Light</button></MenuItem
+				>
+				<MenuItem
+					><button on:click={() => setTheme('dark', true)} class="themer">Dark</button></MenuItem
+				>
+				<MenuItem
+					><button on:click={() => getSysTheme(true)} class="themer">System</button></MenuItem
+				>
+			</Menu>
+		</div>
 	</div>
 </nav>
 
@@ -44,7 +64,34 @@
 	nav > .right {
 		display: flex;
 		justify-content: flex-end;
-		gap: 10px;
+		gap: 15px;
+	}
+
+	#theme-select {
+		display: flex;
+		justify-content: right;
+	}
+
+	.themer {
+		border: none;
+		padding: 1rem;
+		background-color: var(--primary-color);
+		width: 100%;
+		height: 100%;
+		color: var(--font-link-color);
+		text-decoration: none;
+	}
+
+	.themer:hover {
+		background-color: var(--tertiary-color);
+	}
+	.themer:active {
+		background-color: var(--secondary-color);
+	}
+
+	.fa-paint-roller {
+		scale: 150%;
+		color: var(--link-color);
 	}
 
 	@media screen and (max-width: 1200px) {
