@@ -150,10 +150,6 @@
 		button {
 			top: 60vw;
 		}
-		img {
-			min-height: 300px;
-			min-width: 450px;
-		}
 		#top {
 			height: 110vw;
 			max-height: 600px;
