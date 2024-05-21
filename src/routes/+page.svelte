@@ -47,21 +47,11 @@
 		<button on:click={next}>Next!</button>
 	</div>
 	<div id="secondary">
-		<div id="warning">
-			<h2>⚠️Warning⚠️</h2>
-			<p>
-				There is currently a bug in GTK which causes an application to crash when removing a stack
-				page from a stack sidebar, and unfortunately I am using a stack sidebar to manage saved
-				locations. This means that unless GTK maintainers fix the issue I wont release any new
-				'official' version, but you can still clone this repo and use the app.
-			</p>
-		</div>
 		<h1>Features 💬</h1>
 		<ul>
-			<li>Mobile friendly user interface 📱</li>
+			<li>Clean UI 🪟</li>
 			<li>7 Day forecast 'graph' ☀️</li>
 			<li>24 Hour hourly forecast ⌛</li>
-			<li>Pollution index 🚬</li>
 			<li>One week in depth forecast ☔</li>
 			<li>Choose between Metric or Imperial systems 🌍</li>
 			<li>... And more to come! 😃</li>
