@@ -116,10 +116,10 @@
 	button:active {
 		background-color: var(--accent-color-primary);
 	}
-	#warning {
+	/* #warning {
 		text-align: center;
 		width: 60vw;
-	}
+	} */
 	@media screen and (max-width: 900px) {
 		.carousel {
 			top: 25vw;
@@ -131,10 +131,10 @@
 			height: 80vw;
 			min-height: 0px;
 		}
-		#warning {
+		/* #warning {
 			text-align: center;
 			width: 75vw;
-		}
+		} */
 	}
 	@media screen and (max-width: 720px) {
 		button {
